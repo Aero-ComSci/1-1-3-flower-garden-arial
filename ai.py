@@ -3,36 +3,41 @@
 #import turtle as trtl
 #painter = trtl.Turtle()
 
-userinput = input("Hi. My name is Rishyan. I draw flowers. What flower and how many would you like me to draw?").strip()
-
-#use a list to split the user input into 2 elemts 
-
-#elemt one is the number 
-
+userinput = input("What flower and how many would you like me to draw?").strip()
 boingboing = userinput.split(" ")
-i = 0
-while i < len(boingboing):
-    if boingboing[i].isdigit():
-        if boingboing[i] > 30:
+num = ''
+numbers = []
+flowerType = None
+
+for char in boingboing:
+    if char.isdigit():
+        num += char
+        
+        if int(num) > 30:
             print("Our max on one run is 30. Sorry for this and thank you for understanding")
             num = 30
-        else:
-            num = boingboing[i]
-            break
-
         break
-    i += 1
-#element two is the flower type 
+    else:
+        if num:
+            numbers.append(num)
+            num = ''
+        
 
-flowers = ["roses", "daisies", "violets", "poppy", "marigold"]
+   
+
+flowers = ["roses", "daisies", "violets", "poppy", "marigold", "lily"]
 
 w = 0
 while w < len(boingboing):
     if boingboing[w].lower() in flowers:
         flowerType = boingboing[w]
         break
-    
+
     w += 1
+
+print(flowerType, num)
+
+
 
 # print(num, flowerType)
 
