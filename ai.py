@@ -1,57 +1,31 @@
-#user input at the very top 
+def parse(userinput):
+    flowers = ["roses", "rose", "violets", "violet", "poppy", "poppies", "marigold", "marigolds", "lily", "lilies"]
+    boingboing = userinput.strip().split(" ")
+    flowerType = None
+    num = ''
+    w = 0
+    while w < len(boingboing):
+        if boingboing[w].lower() in flowers:
+            flowerType = boingboing[w]
+            break
 
-#import turtle as trtl
-#painter = trtl.Turtle()
+        w += 1
+
+    for char in boingboing[w-1]:
+        if char.isdigit():
+            num += char
+            
+            if int(num) > 30:
+                print("Our max on one run is 30. Sorry for this and thank you for understanding")
+                num = 30
+            break
+    print(flowerType, num)
+            
 
 userinput = input("What flower and how many would you like me to draw?").strip()
-boingboing = userinput.split(" ")
-num = ''
-numbers = []
-flowerType = None
-
-for char in boingboing:
-    if char.isdigit():
-        num += char
-        
-        if int(num) > 30:
-            print("Our max on one run is 30. Sorry for this and thank you for understanding")
-            num = 30
-        break
-    else:
-        if num:
-            numbers.append(num)
-            num = ''
-        
-
-   
-
-flowers = ["roses", "daisies", "violets", "poppy", "marigold", "lily"]
-
-w = 0
-while w < len(boingboing):
-    if boingboing[w].lower() in flowers:
-        flowerType = boingboing[w]
-        break
-
-    w += 1
-
-print(flowerType, num)
+parse(userinput)
 
 
-
-# print(num, flowerType)
-
-# def rose(num, type):
-#     painter.forward
     
 
-# wn = trtl.Screen()
-# wn.mainloop()
 
-# first we make mae a function to draw flower 
-#this funciton will have 5 if and elif statements and will change the colors of the petals only base don the case 
-
-# flower funciton has 3 parts 
-#circle 
-#stem
-#pettles, these are the hardest which we keep till end 
