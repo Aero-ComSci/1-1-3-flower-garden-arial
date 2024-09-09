@@ -3,8 +3,8 @@
 
 Our code takes in a prompt from the reader.
 
-We see how many flowers we need to print and which flower. If the flower is one of the 5 we draw we will the draw the flower.
+We see how many flowers we need to print and which flower. If the flower is one of the 5 we draw we will the draw the flower(s).
 
-To find the key words we split the input and looked for the flower name and numbers.
+To find the key words we use the process of tokenization by splitting the input by spaces and then from there we look for one of the flower names in the list, then from there we find the number closest to that flower by taking the index of the flower - 1 this allows us to bypass most errors with tokenization but still misses some wonky cases that the user may decide to throw upon us. 
 
 The max flowers we allowed the user to print is 30
