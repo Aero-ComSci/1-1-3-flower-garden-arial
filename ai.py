@@ -8,7 +8,7 @@ class Flower:
     self.distance = distance
     self.turtle = trtl.Turtle()
   def drawall(self, num):
-    screen = self.turtle.screen()
+    screen = trtl.Screen()
     screen.setup(width=800, height=600)  # Set the screen size
     width = screen.window_width()
     height = screen.window_height()
@@ -92,20 +92,20 @@ def main(userinput):
           break
 
   if flowerType == "rose" or flowerType == "roses":
-    rose = Rose(num)
-    rose.drawall(num)
+    rose = Rose(int(num))
+    rose.drawall(int(num))
   elif flowerType == "violet" or flowerType == "violets":
-    violet = Violet(num)
-    violet.drawall(num)
+    violet = Violet(int(num))
+    violet.drawall(int(num))
   elif flowerType == "poppy" or flowerType == "poppies":
-    poppy = Poppy(num)
-    poppy.drawall(num)
+    poppy = Poppy(int(num))
+    poppy.drawall(int(num))
   elif flowerType == "marigold" or flowerType == "marigolds":
-    marigold = Marigold(num)
-    marigold.drawall(num)
+    marigold = Marigold(int(num))
+    marigold.drawall(int(num))
   elif flowerType == "lily" or flowerType == "lilies":
-    lily = Lily(num)
-    lily.drawall(num)
+    lily = Lily(int(num))
+    lily.drawall(int(num))
   else:
     print("Invalid flower type. Please choose from: rose, violet, poppy, marigold, lily.")
 
